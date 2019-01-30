@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>a brief introduction to the tidyverse</title>
+    <meta charset="utf-8">
+    <meta name="date" content="2019-02-15" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="libs/remark-css/default-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# a brief introduction to the tidyverse
+### 2019-02-15
+
+---
+
+
+#### tidyverse
+
+* data structure
+* tool suite
+* workflow
+
+
+---
+
+.pull-left[
+  &lt;img src="assets/figures/hadley.jpeg" width="100%"&gt;
+]
+
+.pull-right[
+  &lt;img src="assets/figures/hadley_packages.png" width="100%"&gt;
+]
+
+
+---
+
+.center[
+  &lt;img src="assets/figures/jeep_thing_sticker.jpg" width="100%"&gt;
+]
+
+
+---
+
+#### data structure: tidy data
+
+* each variable in a column
+* each observation in a row
+* each value in a cell
+
+
+---
+
+.center[
+  &lt;img src="assets/figures/tidy_jeopardy.jpg" width="100%"&gt;
+]
+
+
+---
+
+#### Open an intro to ANY statistics textbook...
+
+.center[
+  &lt;img src="assets/figures/intro-stats.png" width="65%"&gt;
+]
+
+--
+
+.center[
+  ...and you will find that statistics (analysis, plotting - anything, really) starts once you have tidy data
+]
+
+.footer[D. Cook [To the Tidyverse and Beyond: Challenges for the Future in Data Science](bit.ly/rstudio-cook)]
+
+
+---
+
+#### workflow
+
+.center[
+  &lt;img src="assets/figures/tidy_workflow_philosophy.png" width="50%"&gt;
+]
+
+"It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data" _Dasu and Johnson 2003_
+
+
+"All data are crap, it is just a matter of how much work you have to do to make them useful" _good ol' Ben_
+
+.footer[[R for Data Science](https://r4ds.had.co.nz/)]
+
+
+---
+
+#### write for humans
+
+"Programs must be written for people to read, and only incidentally for machines to execute." _Hal Abelson_
+
+```r
+new_thing &lt;- thing %&gt;%
+  do something to thing %&gt;%
+  do something to thing %&gt;%
+  do something to thing
+```
+.footer[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
+
+---
+
+#### tidyverse
+
+.center[
+  &lt;img src="assets/figures/tidyverse_components.png" width="60%"&gt;
+]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

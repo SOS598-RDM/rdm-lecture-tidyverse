@@ -1,0 +1,110 @@
+---
+title: "a brief introduction to the tidyverse"
+subtitle: FALSE
+author: FALSE
+date: "2019-02-15"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["default", "assets/my-theme.css", "libs/remark-css/default-fonts.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+#### tidyverse
+
+* data structure
+* tool suite
+* workflow
+
+
+---
+
+.pull-left[
+  <img src="assets/figures/hadley.jpeg" width="100%">
+]
+
+.pull-right[
+  <img src="assets/figures/hadley_packages.png" width="100%">
+]
+
+
+---
+
+.center[
+  <img src="assets/figures/jeep_thing_sticker.jpg" width="100%">
+]
+
+
+---
+
+#### data structure: tidy data
+
+* each variable in a column
+* each observation in a row
+* each value in a cell
+
+
+---
+
+.center[
+  <img src="assets/figures/tidy_jeopardy.jpg" width="100%">
+]
+
+
+---
+
+#### Open an intro to ANY statistics textbook...
+
+.center[
+  <img src="assets/figures/intro-stats.png" width="65%">
+]
+
+--
+
+.center[
+  ...and you will find that statistics (analysis, plotting - anything, really) starts once you have tidy data
+]
+
+.footer[D. Cook [To the Tidyverse and Beyond: Challenges for the Future in Data Science](bit.ly/rstudio-cook)]
+
+
+---
+
+#### workflow
+
+.center[
+  <img src="assets/figures/tidy_workflow_philosophy.png" width="50%">
+]
+
+"It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data" _Dasu and Johnson 2003_
+
+
+"All data are crap, it is just a matter of how much work you have to do to make them useful" _good ol' Ben_
+
+.footer[[R for Data Science](https://r4ds.had.co.nz/)]
+
+
+---
+
+#### write for humans
+
+"Programs must be written for people to read, and only incidentally for machines to execute." _Hal Abelson_
+
+```r
+new_thing <- thing %>%
+  do something to thing %>%
+  do something to thing %>%
+  do something to thing
+```
+.footer[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
+
+---
+
+#### tidyverse
+
+.center[
+  <img src="assets/figures/tidyverse_components.png" width="60%">
+]
