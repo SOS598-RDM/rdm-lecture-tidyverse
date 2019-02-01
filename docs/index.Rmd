@@ -101,6 +101,7 @@ new_thing <- thing %>%
 ```
 .footer[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
 
+
 ---
 
 #### tidyverse
@@ -108,3 +109,45 @@ new_thing <- thing %>%
 .center[
   <img src="assets/figures/tidyverse_components.png" width="60%">
 ]
+
+---
+
+#### BP: analysis-friendly data
+
+* create analysis-friendly data:
+  + each column a variable
+  + each row an observation
+
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
+
+
+---
+
+#### BP: create analysis-friendly data
+
+* each column a variable
+* each row an observation
+
+```{r iris-wide, echo=FALSE}
+knitr::kable(head(iris), format = "html")
+```
+
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
+
+
+---
+
+#### BP: create analysis-friendly data
+
+* each column a variable
+* each row an observation
+
+```{r iris-long, echo=FALSE}
+library(tidyverse)
+knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10), format = "html")
+```
+
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
+
+
+
