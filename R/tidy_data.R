@@ -1,6 +1,6 @@
 library(tidyverse)
 
-tb <- read_csv('~/localRepos/meet_R/practice_data/tb.csv')
+tb <- read_csv('~/localRepos/rdm-lecture-tidyverse/data/tb.csv')
 
 # make tidy
 tb_tidy <- tb %>% 
