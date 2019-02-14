@@ -15,13 +15,37 @@ output:
 
 #### tidy
 
-(1) data structure
+* data structure
+* workflow
+* tool suite
 
-(2) workflow
 
-<img src="assets/figures/jeep_thing_sticker.jpg" width="60%">
+---
 
-(3) tool suite
+#### data structure
+
+Open an intro to ANY statistics textbook...
+.center[
+  <img src="assets/figures/intro-stats.png" width="70%">
+]
+...and you will find that statistics (analysis, plotting - anything, really) starts once you have tidy data.
+
+
+.footnote[D. Cook [To the Tidyverse and Beyond: Challenges for the Future in Data Science](bit.ly/rstudio-cook)]
+
+
+---
+
+<br>
+<br>
+
+"It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data"<sup>1</sup>
+
+
+"All data are crap, it is just a matter of how much work you have to do to make them useful" _good ol' Ben_
+
+
+.footnote[<sup>1</sup>Dasu and Johnson 2003, Exploratory Data Mining and Data Cleaning]
 
 
 ---
@@ -34,50 +58,35 @@ output:
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
----
-
-.center[
-  <img src="assets/figures/tidy_jeopardy.jpg" width="100%">
-]
-
 
 ---
 
-#### Open an intro to ANY statistics textbook...
+<br>
+<br>
 
 .center[
-  <img src="assets/figures/intro-stats.png" width="65%">
+  <img src="assets/figures/tidy_jeopardy.jpg" width="90%">
 ]
-
---
-
-.center[
-  ...and you will find that statistics (analysis, plotting - anything, really) starts once you have tidy data
-]
-
-.footnote[D. Cook [To the Tidyverse and Beyond: Challenges for the Future in Data Science](bit.ly/rstudio-cook)]
 
 
 ---
 
 #### workflow
 
+<br>
+<br>
+
 .center[
   <img src="assets/figures/tidy_workflow_philosophy.png" width="80%">
 ]
 
-
-"It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data" _Dasu and Johnson 2003_
-
-
-"All data are crap, it is just a matter of how much work you have to do to make them useful" _good ol' Ben_
 
 .footnote[[R for Data Science](https://r4ds.had.co.nz/)]
 
 
 ---
 
-#### write for humans
+#### workflow: write for humans
 
 "Programs must be written for people to read, and only incidentally for machines to execute." _Hal Abelson_
 
@@ -87,14 +96,27 @@ new_thing <- thing %>%
   do something to thing %>%
   do something to thing
 ```
+
 .footnote[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
+
+
+---
+
+<br>
+<br>
+
+.center[
+  <img src="assets/figures/jeep_thing_sticker.jpg" width="70%">
+]
 
 
 ---
 
 #### tidyverse tool suite
 
+<br>
+<br>
+
 .center[
   <img src="assets/figures/tidyverse_components.png" width="60%">
 ]
-
