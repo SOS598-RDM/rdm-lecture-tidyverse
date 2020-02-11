@@ -1,6 +1,8 @@
+# libraries
 library(tidyverse)
 
-tb <- read_csv('~/localRepos/rdm-lecture-tidyverse/data/tb.csv')
+# read the data
+tb <- read_csv('data/tb.csv')
 
 # make tidy
 tb_tidy <- tb %>% 
