@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>a brief introduction to the tidyverse</title>
+    <title>index.knit</title>
     <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/my-theme.css" type="text/css" />
     <link rel="stylesheet" href="libs/remark-css/default-fonts.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-# a brief introduction to the tidyverse
-### spring 2020
-
----
-
+class: middle
 
 #### tidy
 
@@ -25,8 +21,6 @@ class: center, middle, inverse, title-slide
 
 
 ---
-
-#### data structure
 
 Open an intro to ANY statistics textbook...
 .center[
@@ -39,9 +33,7 @@ Open an intro to ANY statistics textbook...
 
 
 ---
-
-&lt;br&gt;
-&lt;br&gt;
+class: middle, inverse
 
 "It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data"&lt;sup&gt;1&lt;/sup&gt;
 
@@ -53,6 +45,7 @@ Open an intro to ANY statistics textbook...
 
 
 ---
+class: middle
 
 #### data structure: tidy data
 
@@ -64,11 +57,9 @@ Open an intro to ANY statistics textbook...
 
 
 ---
+class: middle
 
-#### data structure: tidy data
-
-&lt;br&gt;
-&lt;br&gt;
+#### tidy data structure
 
 .center[
   &lt;img src="assets/figures/tidy-data.png" width="90%"&gt;
@@ -78,65 +69,10 @@ Open an intro to ANY statistics textbook...
 
 
 ---
-
-&lt;br&gt;
-&lt;br&gt;
+class: middle, inverse
 
 .center[
   &lt;img src="assets/figures/tidy_jeopardy.jpg" width="90%"&gt;
-]
-
-
----
-
-#### workflow
-
-&lt;br&gt;
-&lt;br&gt;
-
-.center[
-  &lt;img src="assets/figures/data-science.png" width="80%"&gt;
-]
-
-
-.footnote[[R for Data Science](https://r4ds.had.co.nz/)]
-
-
----
-
-#### workflow: write for humans
-
-"Programs must be written for people to read, and only incidentally for machines to execute." _Hal Abelson_
-
-```r
-new_thing &lt;- thing %&gt;%
-  do something to thing %&gt;%
-  do something to thing %&gt;%
-  do something to thing
-```
-
-.footnote[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
-
-
----
-
-&lt;br&gt;
-&lt;br&gt;
-
-.center[
-  &lt;img src="assets/figures/jeep_thing_sticker.jpg" width="70%"&gt;
-]
-
-
----
-
-#### tidyverse tool suite
-
-&lt;br&gt;
-&lt;br&gt;
-
-.center[
-  &lt;img src="assets/figures/tidyverse_components.png" width="60%"&gt;
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -185,6 +121,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -202,17 +164,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
