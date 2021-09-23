@@ -1,8 +1,8 @@
 ---
-title: "a brief introduction to the tidyverse"
+title: FALSE
 subtitle: FALSE
 author: FALSE
-date: "spring 2020"
+date: FALSE
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -12,6 +12,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+class: middle
 
 #### tidy
 
@@ -21,8 +22,6 @@ output:
 
 
 ---
-
-#### data structure
 
 Open an intro to ANY statistics textbook...
 .center[
@@ -35,9 +34,7 @@ Open an intro to ANY statistics textbook...
 
 
 ---
-
-<br>
-<br>
+class: middle, inverse
 
 "It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data"<sup>1</sup>
 
@@ -49,6 +46,7 @@ Open an intro to ANY statistics textbook...
 
 
 ---
+class: middle
 
 #### data structure: tidy data
 
@@ -60,11 +58,9 @@ Open an intro to ANY statistics textbook...
 
 
 ---
+class: middle
 
-#### data structure: tidy data
-
-<br>
-<br>
+#### tidy data structure
 
 .center[
   <img src="assets/figures/tidy-data.png" width="90%">
@@ -74,63 +70,8 @@ Open an intro to ANY statistics textbook...
 
 
 ---
-
-<br>
-<br>
+class: middle, inverse
 
 .center[
   <img src="assets/figures/tidy_jeopardy.jpg" width="90%">
-]
-
-
----
-
-#### workflow
-
-<br>
-<br>
-
-.center[
-  <img src="assets/figures/data-science.png" width="80%">
-]
-
-
-.footnote[[R for Data Science](https://r4ds.had.co.nz/)]
-
-
----
-
-#### workflow: write for humans
-
-"Programs must be written for people to read, and only incidentally for machines to execute." _Hal Abelson_
-
-```r
-new_thing <- thing %>%
-  do something to thing %>%
-  do something to thing %>%
-  do something to thing
-```
-
-.footnote[H. Wickham [Tidyverse](https://speakerdeck.com/hadley/tidyverse)]
-
-
----
-
-<br>
-<br>
-
-.center[
-  <img src="assets/figures/jeep_thing_sticker.jpg" width="70%">
-]
-
-
----
-
-#### tidyverse tool suite
-
-<br>
-<br>
-
-.center[
-  <img src="assets/figures/tidyverse_components.png" width="60%">
 ]

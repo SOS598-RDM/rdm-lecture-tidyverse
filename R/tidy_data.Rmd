@@ -1,0 +1,121 @@
+---
+title: false
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+I am going to load the entire `ggplot2` library but will otherwise namespace (i.e., package_name::function_name) calls to functions. This is helpful as it allows us to call functions without loading entire libraries. Note, though, that the library must still be installed: in addition to the `ggplot2` library, you will need also the `dplyr`, `tidyr`, and `readr` libraries.
+
+```{r libraries, echo=TRUE}
+library(ggplot2)
+```
+
+Identify a country code for working with data from a single country.
+
+```{r parameters, echo=TRUE}
+country_code <- "US"
+```
+
+Read the data from the `data` directory in this repository.
+
+### load-data
+
+```{r load-data, echo=TRUE, message=FALSE}
+tb <- readr::read_csv("tb.csv")
+```
+
+### tidy the data
+
+```{r tidy-the-data, echo=TRUE}
+
+tb_tidy <- tb |>
+  tidyr::pivot_longer(
+    cols = c(-iso2, -year),
+    names_to = "code",
+    values_to = "count"
+    ) |>
+  tidyr::separate(
+    col = code,
+    into = c("gender", "age"),
+    sep = "_"
+    ) |>
+  dplyr::filter(!is.na(count))
+
+```
+
+
+### filter the data
+
+```{r filter-the-data, echo=TRUE}
+
+tb_filtered <- tb_tidy |>
+  dplyr::filter(
+    iso2 == country_code,
+    !age %in% c("u", "014", "04", "514")
+  )
+
+```
+
+### plot with fill
+
+```{r plot-with-fill, eval=TRUE}
+
+tb_filtered |>
+  ggplot(aes(x = year, y = count, fill = gender)) +
+  geom_bar(stat = "identity", position = "fill") +
+  facet_grid(~ age) +
+  scale_fill_manual(
+    "",
+    values=c("#486030", "#C03018")
+  )
+
+```
+
+### plot sans fill
+
+```{r plot-sans-fill, eval=TRUE}
+
+tb_filtered |>
+  ggplot(aes(x = year, y = count, fill = gender)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~ age) +
+  scale_fill_manual(
+    "",
+    values=c("#486030", "#C03018")
+  )
+
+```
+
+### faceted by gender and age
+
+```{r faceted, eval=TRUE}
+
+tb_filtered |>
+  ggplot(aes(x = year, y = count, fill = gender)) +
+  geom_bar(stat = "identity") +
+  facet_grid(gender ~ age) +
+  scale_fill_manual(
+    "",
+    values=c("#486030", "#C03018")
+  )
+
+```
+
+### polar
+
+```{r polar, eval=TRUE}
+
+tb_filtered |>
+  ggplot(aes(x = year, y = count, fill = gender)) +
+  geom_bar(stat = "identity") +
+  facet_grid(gender ~ age) +
+  scale_fill_manual(
+    "",
+    values=c("#486030", "#C03018")
+    ) +
+  coord_polar()
+
+```

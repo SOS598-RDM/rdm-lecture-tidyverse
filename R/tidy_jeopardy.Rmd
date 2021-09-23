@@ -1,0 +1,108 @@
+---
+title: "tidy_jeopardy"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We can start with a few simple ones, like `mtcars` and `iris`.
+
+
+### atmospheric conditions
+
+```{r}
+sonde <- readr::read_csv("data/CR1000_soil_01_feb272012_jul172013.dat") |>
+  head(n = 10)
+```
+
+
+### tuberculosis
+
+```{r}
+TB <- readr::read_csv("data/tb.csv") |>
+  head(n = 10)
+```
+
+
+### weather
+
+From: [AZMET](https://cals.arizona.edu/azmet/)
+
+```{r}
+azmet <- read.csv(
+  file = "https://cals.arizona.edu/azmet/data/1202rd.txt",
+  header = FALSE,
+  sep = ","
+)
+```
+
+The data appear tidy but it is difficult to tell without knowing the meaning of the variables. We will add the column names to provide some clarity.
+
+```{r}
+azmet_cols <- c(
+  "Year",
+  "Day_of_Year",
+  "Station_Number",
+  "Air_Temp_Max",
+  "Air_Temp_Min",
+  "Air_Temp_Mean",
+  "RH_Max",
+  "RH_Min",
+  "RH_Mean",
+  "VPD_Mean",
+  "Solar_Rad_Total",
+  "Precipitation_Total",
+  "2-inch_Soil_Temp_Max_(changed_to__4-inch_in_1999)",
+  "2-inch_Soil_Temp_Min_(changed_to__4-inch_in_1999)",
+  "2-inch_Soil_Temp_Mean_(changed_to__4-inch_in_1999)",
+  "4-inch_Soil_Temp_Max_(changed_to_20-inch_in_1999)",
+  "4-inch_Soil_Temp_Min_(changed_to_20-inch_in_1999)",
+  "4-inch_Soil_Temp_Mean_(changed_to_20-inch_in_1999)",
+  "Wind_Speed_Mean",
+  "Wind_Vector_Magnitude_for_Day",
+  "Wind_Vector_Direction_for_Day",
+  "Wind_Direction_Standard_Deviation_for_Day",
+  "Max_Wind_Speed",
+  "Reference_ET",
+  "Heat_Units_(30/12.8_C)_(86/55_F)"
+)
+```
+
+```{r}
+colnames(azmet) <- azmet_cols
+```
+
+
+### NFL player routes
+
+[nfl-player-routes](https://docs.google.com/presentation/d/16oZE5sBX8JTXnWZCuPOx054S6wypQaNqB67BG9gPECI/edit?usp=sharing)
+
+
+### watersheds
+
+Watersheds near Los Alamos, New Mexico
+
+```{r}
+nm_watersheds <- sf::st_read(
+  dsn = "data/new_mexico_ws.geojson"
+)
+```
+
+More context: sampling locations at the outflow of each watershed.
+
+```{r}
+nm_pour_points <- sf::st_read(
+  dsn = "data/new_mexico_points.geojson"
+)
+```
+
+Another way to look at these (spatial) data.
+
+```{r}
+mapview::mapview(x = nm_watersheds) +
+mapview::mapview(x = nm_pour_points)
+```
